@@ -1,6 +1,7 @@
 package com.thoughtworks.pos.domains;
 
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Administrator on 2014/12/31.
@@ -16,17 +17,34 @@ public class Report{
         return itemGroupies;
     }
 
+
+
+
+
     public double getTotal(){
+
         double result = 0.00;
         for (ItemGroup itemGroup : itemGroupies)
             result += itemGroup.subTotal();
+
+
         return result;
+
     }
 
+
     public double getSaving(){
+
         double result = 0.00;
         for (ItemGroup itemGroup : itemGroupies)
             result += itemGroup.saving();
         return result;
+    }
+    public boolean getPromotion(){
+        boolean result = false;
+        for (ItemGroup itemGroup : itemGroupies)
+            if (itemGroup.promotion()==true) result = true;
+        return result;
+
     }
 }

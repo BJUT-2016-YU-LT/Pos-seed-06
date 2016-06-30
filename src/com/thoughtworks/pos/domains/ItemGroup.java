@@ -29,16 +29,26 @@ public class ItemGroup {
     }
 
     public double subTotal() {
+
         double result = 0.00;
         for (Item item : items)
-            result += item.getPrice() * item.getDiscount();
+            result += item.getPrice() * item.getDiscount()*item.getVipdiscount();
         return result;
     }
 
     public double saving() {
         double result = 0.00;
         for (Item item : items)
-            result += item.getPrice() * (1 - item.getDiscount());
+
+            result += item.getPrice() * (1 - item.getDiscount()*item.getVipdiscount());
+
         return result;
     }
+    public boolean promotion(){
+        boolean result= false;
+        if (items.get(0).getPromotion()==true&&items.size()>=2) result=true;
+        return result;
+    }
+
+
 }
