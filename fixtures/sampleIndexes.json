@@ -9,15 +9,12 @@
     "name": '雪碧',
     "unit": '瓶',
     "price": 3.00,
-    "discount": 0.8,
-    "vipdiscount":0.9,
-    "promotion": true
+    "discount": 0.8
   },
   "ITEM000000": {
     "name": '可口可乐',
     "unit": '瓶',
     "price": 3.00,
-    "discount":0.00,
     "promotion": true
   }
 
