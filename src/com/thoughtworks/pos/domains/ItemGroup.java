@@ -41,4 +41,11 @@ public class ItemGroup {
             result += item.getPrice() * (1 - item.getDiscount());
         return result;
     }
+    public boolean promotion(){
+        boolean result= false;
+        if (items.get(0).getPromotion()==true&&items.size()>=2) result=true;
+        return result;
+    }
+
+
 }

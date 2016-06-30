@@ -9,7 +9,7 @@ public class Item {
     private String unit;
     private double price;
     private double discount;
-
+    private boolean promotion;
 
     public Item() {
     }
@@ -26,6 +26,16 @@ public class Item {
         this(barcode, name, unit, price);
         this.setDiscount(discount);
     }
+
+
+    public Item(String barcode, String name, String unit, double price,double discount, boolean promotion) {
+        this(barcode, name, unit, price);
+        if(discount==1) this.setPromotion(promotion);
+        else this.setDiscount(discount);//同时存在优惠和打折时默认按照打折计算
+
+    }
+
+
 
     public String getName() {
         return name;
@@ -45,6 +55,10 @@ public class Item {
             return 1.00;
         return discount;
     }
+    public boolean getPromotion(){
+        return promotion;
+    }
+
 
     public void setBarcode(String barcode) {
         this.barcode = barcode;
@@ -62,7 +76,7 @@ public class Item {
         this.price = price;
     }
 
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
+    public void setDiscount(double discount) {this.discount = discount;}
+
+    public void setPromotion(boolean promotion){this.promotion=promotion;}
 }

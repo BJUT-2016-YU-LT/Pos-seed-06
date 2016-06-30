@@ -29,4 +29,11 @@ public class Report{
             result += itemGroup.saving();
         return result;
     }
+    public boolean getPromotion(){
+        boolean result = false;
+        for (ItemGroup itemGroup : itemGroupies)
+            if (itemGroup.promotion()==true) result = true;
+        return result;
+
+    }
 }
